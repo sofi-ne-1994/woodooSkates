@@ -1,0 +1,383 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+
+*{
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+/*------------- N A V----------------*/
+nav{
+    background-color:rgb(29, 29, 29);
+    padding: 4px 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+    nav img{
+        width: 200px;
+    }
+    nav ul{
+        list-style: none;
+        display: flex;
+    }
+    nav ul li{
+        margin-right: 14px;
+    }
+    nav ul li a{
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+    }
+
+
+
+
+    header img{
+        width: 100%; /* ancho */
+    }
+    h1{ 
+        margin: 20px 0;
+        
+    }
+    main{
+        padding: 10px 30px;
+    }
+
+
+
+
+         
+   /* ---------------P R O D U C T O S --------------------*/
+    .caja-productos {
+        padding-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+        .caja-productos figure{
+             width: 30%;
+        }
+        .caja-productos figure img{
+          width: 100%;
+          /*no queria radio en las fotos*/
+        }
+         .caja-productos figure figcaption{
+            margin: 10px 0;
+            color:rgb(15, 15, 15);
+            font-size: 20px;
+        }
+        .caja-productos figure p{
+            line-height: 20px;
+            margin-bottom: 20px;
+            color: rgb(10, 10, 10);
+        }
+        .caja-productos figure a{
+            text-decoration: none;
+            color: rgb(248, 227, 227);
+            background-color: rgb(3, 3, 3);
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        
+    
+
+
+
+   /* ---------------G A L E R I A  G R I D --------------------*/
+   
+/* galeria grid */
+.galeria img{
+    height: 100%;
+    width: 100%;
+    object-fit:cover ;
+
+}
+.galeria{
+    background-color: rgb(27, 23, 23);
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: repeat(3,30vh);
+    grid-template-areas:
+    "foto-a foto-b foto-b "
+    "foto-a foto-c foto-d"
+    "foto-e foto-e foto-d";
+}
+
+.galeria .foto-a{
+    border: solid 3px red;
+    grid-area: foto-a;
+}
+
+
+.galeria .foto-b{
+    border: solid 3px rgb(174, 0, 255);
+    grid-area: foto-b;
+}
+
+
+.galeria .foto-c{
+    border: solid 3px rgb(255, 251, 0);
+    grid-area: foto-c;
+}
+
+.galeria .foto-d{
+    border: solid 3px rgb(255, 95, 3);
+    grid-area: foto-d;
+}
+
+.galeria .foto-e{
+    border: solid 3px green;
+    grid-area: foto-e;
+}
+
+
+   /* --------------- SPOTS --------------------*/
+   .spots article{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+    
+    width: 100%;
+}
+    .spotsmap {
+        display: flex;
+        flex-direction: row;
+
+    }
+    .spots article a{
+        height: 30px;
+        width: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+        color: white;
+    }
+    .spotsmap figure, .spotsmap iframe{
+        width: 50vw;
+        /* height: 400px; */
+    }
+    .spotsmap figure img{
+        width: 100%;
+        object-fit: cover;
+    }
+    
+
+   /*--------------------- S H O P ------------------------*/
+
+   #shop{
+    display: grid;
+    grid-template-columns: 20% repeat(2,1fr);
+    grid-template-rows: 80px repeat(3,300px);
+    grid-template-areas: 
+    "actions actions actions" 
+    "filters prod1 prod1"
+    "filters prod2 prod3"
+    "filters prod2 prod4 ";
+    gap: 5px;
+}
+    #shop .search-box{
+    grid-area: actions;
+    position: static;
+    background-color: rgb(7, 0, 0);
+     display: flex;
+    justify-content: flex-end;
+    align-items: center; 
+    }
+    /* #shop form {
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-start;
+    } */
+
+            #shop .search-box input{
+                border: none;
+                background-color: rgb(52, 226, 18);
+                border-radius: 3px;
+                /* padding: 8px 6px; */
+             }
+            #shop .search-box button{
+                background-color: black ;
+                border: none;
+                padding: 4px;
+                border-radius: 3px;
+                margin-right: 5px;
+           
+            }
+            #shop .search-box button:hover{
+                cursor: pointer;
+                background-color:rgb(52, 226, 18);
+            }
+            #shop .search-box button svg{
+                width: 18px;
+                height: 18px;
+                fill: white;
+                display: inline-flex;
+                justify-content: flex-end;
+              align-items: center;
+            }
+    
+        #shop .filtros{
+            grid-area: filters;
+        }
+            #shop .filtros select{
+                border: none;
+                background-color: rgb(56, 52, 52);
+                color: rgb(255, 251, 251);
+                padding: 4px 0;
+                font-size: 1.1em;
+            }
+            #shop .filtros :hover{
+                color: rgb(52, 226, 18) ;
+            }
+            #shop .filtros ul{
+                list-style: none;
+                margin-top: 10px;
+            }
+            #shop .filtros ul a{
+                color: rgb(0, 0, 0);
+                font-size: 0.9em;
+                text-decoration: none;
+            }
+            #shop .filtros ul a:hover{
+                color: rgb(52, 226, 18) ;
+            }
+    
+        #shop img{
+            width: 250px;
+        }
+    
+        #shop .prod-1{
+            grid-area: prod1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 50px;
+        }
+        #shop .prod-1 p{
+            width: 60%;
+            color: white ;
+        }
+        #shop .prod-2{
+            grid-area: prod2;
+            
+        }
+    
+
+
+        #shop .prod-3{
+            grid-area: prod3;
+        }
+
+
+        #shop .prod-4{
+            grid-area: prod4;
+        }
+        #shop .prod-2 p,.prod-3 p, .prod-4 p {
+            color: white;
+        }
+        #shop .bg{
+            background-color: rgb(0, 0, 0);
+        }
+        #shop .prod-2,
+        #shop .prod-3,
+        #shop .prod-4{
+            display: flex;
+            flex-direction: column;
+            padding: 0 50px;
+            align-items: center;
+            justify-content: center;
+        }  
+
+
+
+
+
+
+   /*----------------C  O N T A C T O ---------------------*/
+   .contacto{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+    .contactoform{
+    padding: 30px;
+    width: 30%;
+    background-color: black;
+    }
+    .contactoform label{
+        color: white;
+        display: block;
+        margin-bottom: 4px;
+    }
+
+    .contactoform input{
+        margin-bottom: 20px;
+        width: 100%;
+        height: 30px;    
+      
+         border: none;
+
+     }
+    
+    .contactoform textarea{
+        width: 100%;
+        border: none;
+        margin-bottom: 20px;
+    }  
+
+
+
+
+
+   /*--------------F O O T E R --------------*/
+    footer{
+        margin-top: 50px;
+        padding: 10px 30px;
+        background-color: rgb(0, 0, 0);
+        display: flex;
+    }
+   
+    footer svg{
+        fill: rgb(255, 255, 255);
+        width: 100px;
+        height: 25px;
+    }
+    /*no puedo hacer que los logos se vean en linea*/
+
+    .whatsapp{
+        position: fixed;
+        right: 50px;
+        bottom: 100px;
+        width: 80px;
+    }
+    .whatsapp svg{
+        fill: rgb(4, 252, 4);
+    }
+
+    /* -arregle los <a> del  ahora ya se puede hacer click y va al index
+       -agregue el form de contacto
+        le di css al form
+       - agregue el whatsapp
+       -puse la nav sticky
+       -correjí algunas cosas de los productos del index
+       -no desarrolle mas el header en el css porque no se no lo vi necesario todaiva?
+        creo que ahora revisando la clase de ayer(la clase 6) no me quedo claro el
+        reasultado final del header tipo lo del fondo rojo, y si recuedo que dijiste
+        que lo querias maás chico por que así 
+        te parecia muy grande
+       -sigo sin encontrarle la vuelta al footer
+        le puse display flex, pero en su CSS no esta puesto el display y aun asi
+        se ven en linea. no se que será */
